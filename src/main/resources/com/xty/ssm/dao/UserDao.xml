@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xty.ssm.dao.UserDao">
+    <resultMap id="userResultMap" type="com.xty.ssm.model.User" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="username" property="userName" jdbcType="VARCHAR" />
+        <result column="birth" property="birth" jdbcType="TIMESTAMP" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="findAll" resultMap="userResultMap">
+         select * from t_user
+    </select>
+</mapper>
